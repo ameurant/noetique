@@ -1,0 +1,31 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="noetique">
+
+  <permission
+      id="noetique.AddBook"
+      title="noetique: Add Book"
+      />
+
+  <!-- View view -->
+  <browser:page
+      name="view"
+      for=".content.IBook"
+      class=".views.ViewView"
+      template="view.pt"
+      permission="zope2.View"
+      layer="noetique.interfaces.ILayerSpecific"
+      />
+
+  <!-- Faceted view -->
+  <browser:page
+      name="faceted-preview-item"
+      for=".content.IBook"
+      template="facetedview.pt"
+      permission="zope2.View"
+      layer="noetique.interfaces.ILayerSpecific"
+      />
+
+</configure>
