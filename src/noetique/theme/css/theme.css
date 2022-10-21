@@ -4318,7 +4318,7 @@ textarea.form-control-lg {
   --bs-breadcrumb-padding-x: 1rem;
   --bs-breadcrumb-padding-y: 0.5rem;
   --bs-breadcrumb-margin-bottom: 2rem;
-  --bs-breadcrumb-bg: #e9ecef;
+  --bs-breadcrumb-bg: #dbdcdd;
   --bs-breadcrumb-border-radius: ;
   --bs-breadcrumb-divider-color: #6c757d;
   --bs-breadcrumb-item-padding-x: 0.5rem;
@@ -12460,7 +12460,7 @@ figcaption {
   --bs-navbar-color: white;
   --bs-navbar-active-color: white;
   --bs-navbar-hover-color: white;
-  --bs-navbar-background: #007bb1;
+  --bs-navbar-background: #444750;
   --bs-navbar-active-background: rgba(0, 0, 0, 0.2);
   --bs-navbar-hover-background: rgba(0, 0, 0, 0.3);
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
@@ -12468,7 +12468,7 @@ figcaption {
 }
 
 #portal-breadcrumbs {
-  background-color: #e9ecef;
+  background-color: #dbdcdd;
   margin-bottom: 2rem;
 }
 #portal-breadcrumbs .breadcrumb {
@@ -12908,8 +12908,9 @@ p.highlight-paragraph {
   padding: 1rem;
 }
 
-#portal-header {
-  align-items: end;
+#content-header {
+  background: url("/++theme++noetique/images/header-background.png") no-repeat 75% 0px fixed;
+  background-color: #525a5c;
 }
 
 /*# sourceMappingURL=theme.css.map */

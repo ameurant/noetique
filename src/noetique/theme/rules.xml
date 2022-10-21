@@ -8,7 +8,7 @@
   <xi:include href="++theme++noetique/barceloneta.xml" />
 
   <rules css:if-content="#visual-portal-wrapper">
-    <drop css:content="#portal-searchbox .searchSection" />
+    <drop css:content="#portal-anontools" />
   </rules>
 
 </rules>
