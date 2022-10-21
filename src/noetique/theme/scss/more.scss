@@ -22,3 +22,18 @@ body.portaltype-plone-site #portal-breadcrumbs #marc-quote {
     }
 }
 
+.card-header {
+    background-color: $noetique-grey-dark;
+    color: $white;
+}
+.card-body {
+    background-color:  $noetique-grey-light;
+}
+.card-footer {
+    background-color: $noetique-grey-light;
+    color: $black;
+}
+
+#home-boxes .card + .card {
+    margin-top: 2em;
+}

@@ -79,8 +79,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #007bb1;
-  --bs-link-hover-color: #00628e;
+  --bs-link-color: green;
+  --bs-link-hover-color: #006600;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -4082,11 +4082,11 @@ textarea.form-control-lg {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
   --bs-card-title-spacer-y: 0.5rem;
-  --bs-card-border-width: 1px;
+  --bs-card-border-width: 0px;
   --bs-card-border-color: var(--bs-border-color-translucent);
   --bs-card-border-radius: 0.375rem;
   --bs-card-box-shadow: ;
-  --bs-card-inner-border-radius: calc(0.375rem - 1px);
+  --bs-card-inner-border-radius: calc(0.375rem - 0px);
   --bs-card-cap-padding-y: 0.5rem;
   --bs-card-cap-padding-x: 1rem;
   --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
@@ -11585,7 +11585,7 @@ label.required:after {
 }
 
 .select2-results .select2-highlighted {
-  color: #00628e;
+  color: #006600;
 }
 
 .pattern-relateditems-item-title, .pattern-relateditems-item-title[class*=contenttype-]:before,
@@ -12938,6 +12938,23 @@ body.portaltype-plone-site #portal-breadcrumbs #marc-quote {
   #portal-globalnav .nav-item.index_html {
     display: inline;
   }
+}
+.card-header {
+  background-color: #444750;
+  color: #fff;
+}
+
+.card-body {
+  background-color: #dbdcdd;
+}
+
+.card-footer {
+  background-color: #dbdcdd;
+  color: #000;
+}
+
+#home-boxes .card + .card {
+  margin-top: 2em;
 }
 
 /*# sourceMappingURL=theme.css.map */

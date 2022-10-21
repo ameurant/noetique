@@ -2,25 +2,14 @@
         i18n:domain="noetique">
 
 <metal:main fill-slot="main">
-    <div class="hero">
-        <h2>"La pluie ne mouille pas les poissons" (M.H.)</h2>
-        <p>
-            Je suis un chercheur pratique. Il me faut comprendre pour pouvoir
-            bâtir, agir en conséquence, faire les choses avec sens.
-            J'étudie donc, tout le temps et quel plaisir ! J'expérimente.
-            Je formalise des méthodes. Et lorsque le bon mot est prêt,
-            lorsque la bonne formule est au point, lorsque vous êtes prêt
-            à aller de l'avant, je fais un bout de chemin avec vous ... Marc.
-        </p>
-    </div>
-    <div id="home-boxes">
-        <div class="home-boxes-column-left">
-            <section id="box-news" class="box" tal:define="news view/last_news" tal:condition="news">
-                <header>
+    <div id="home-boxes" class="row">
+        <div class="col-12 col-lg-6">
+            <section id="box-news" class="card" tal:define="news view/last_news" tal:condition="news">
+                <header class="card-header">
                     A la une
                 </header>
-                <section>
-                    <a href="${news/url}">
+                <section class="card-body">
+                    <a href="${news/url}" class="text-black">
                         <h4>${news/title}</h4>
                         <tal:if tal:condition="news/has_image">
                             <img tal:attributes="src string:${news/url}/@@images/image/mini" />
@@ -30,15 +19,15 @@
                         </p>
                     </a>
                 </section>
-                <footer>
-                    <a href="actualites">Toutes les actualités</a>
+                <footer class="card-footer">
+                    <a class="card-link" href="actualites">Toutes les actualités</a>
                 </footer>
             </section>
-            <section id="box-agenda" class="box" tal:define="events view/next_events">
-                <header>
+            <section id="box-agenda" class="card" tal:define="events view/next_events">
+                <header class="card-header">
                     Agenda
                 </header>
-                <section tal:repeat="event events">
+                <section class="card-body" tal:repeat="event events">
                     <a href="${event/url}">
                         <h5>${event/title}</h5>
                         <p>
@@ -48,15 +37,15 @@
                         </p>
                     </a>
                 </section>
-                <footer>
+                <footer class="card-footer">
                     <a href="agenda">Tout l'agenda</a>
                 </footer>
             </section>
-            <section id="box-articles" class="box" tal:define="articles view/last_articles">
-                <header>
+            <section id="box-articles" class="card" tal:define="articles view/last_articles">
+                <header class="card-header">
                     Billets
                 </header>
-                <section tal:repeat="article articles">
+                <section class="card-body" tal:repeat="article articles">
                     <a href="${article/url}">
                         <h5>${article/title}</h5>
                         <p>
@@ -67,81 +56,75 @@
                         </p>
                     </a>
                 </section>
-                <footer>
+                <footer class="card-footer">
                     <a href="billets">Tous les billets</a>
                 </footer>
             </section>
         </div>
-        <div class="home-boxes-column-right">
-            <section id="box-thought" class="box" tal:define="thought view/last_thought" tal:condition="thought">
-                <header>
+        <div class="col-12 col-lg-6">
+            <section id="box-thought" class="card" tal:define="thought view/last_thought" tal:condition="thought">
+                <header class="card-header">
                     Pensées
                 </header>
-                <section>
+                <section class="card-body">
                     <p>
                         Journal philosophique et spirituel de Marc Halévy
                     </p>
                     <p>
                         <a href="${thought/url}">${thought/title}</a>
                     </p>
-
                 </section>
-                <footer>
+                <footer class="card-footer">
                     <a href="journal">Tout le journal</a>
                 </footer>
             </section>
-            <section id="box-video" class="box" tal:define="video view/last_video" tal:condition="video">
-                <header>
+            <section id="box-video" class="card" tal:define="video view/last_video" tal:condition="video">
+                <header class="card-header">
                     Dernière vidéo
                 </header>
-                <section>
+                <section class="card-body">
                     <iframe  frameborder="0" allowfullscreen width="100%"
                             tal:attributes="src string:https://www.youtube.com/embed/${video/video_id}" ></iframe>
                 </section>
-                <footer>
+                <footer class="card-body">
                     <a href="https://www.youtube.com/channel/UCplO3-iuNvhEinVj8Sxh6XA">Chaîne Youtube de Marc Halévy</a>
                 </footer>
             </section>
-            <section id="box-bebooda" class="box">
-                <header>
+            <section id="box-bebooda" class="card">
+                <header class="card-header">
                     Webinaires & Masterclasses
                 </header>
+                <section class="card-body">
                 <p>
-                <img id="lunette-verte"
-                     src="/++theme++noetique/images/lunette_verte_120.png" />
-                Pour comprendre ce qui arrive !<br />
-                <span class="texte-vert">
-                    Voir et agir avec les lunettes vertes.<br />
-                    Se hisser sur "<em>la courbe verte</em>" du nouveau monde.<br />
-                </span>
-                Tous publics, entrepreneurs, dirigeants, formateurs,…<br />
+                <img class="float-end" src="/++theme++noetique/images/lunette-verte.png" />
+                Pour comprendre ce qui arrive !
+                    Voir et agir avec les lunettes vertes.
+                    Se hisser sur "<em>la courbe verte</em>" du nouveau monde.
+                Tous publics, entrepreneurs, dirigeants, formateurs,
                 </p>
-                <ul id="liste-bebooda">
-                    <li>
-                        <i class="fas fa-hand-point-right texte-vert"></i>
+                <ul class="list-group">
+                    <li class="list-group-item">
                         <a href="https://www.lacabaneverte.fr/programme-des-lecons-de-la-courbe-verte/"
                            target="_blank">
                            Participer aux séminaires résidentiels
                         </a>
                     </li>
-                    <li>
-                        <i class="fas fa-hand-point-right texte-vert"></i>
+                    <li class="list-group-item">
                         <a href="https://bebooda.fr/"
                            target="_blank">
-                            Aussi à suivre en ligne sur <br />
-                            <img id="logo-bebooda"
-                                 src="/++theme++noetique/images/logo_bebooda_blanc_300x45.png" />
+                            Aussi à suivre en ligne sur
+                            <img id="logo-bebooda" width="150px"
+                                 src="/++theme++noetique/images/logo-bebooda.png" />
                         </a>
                     </li>
                 </ul>
-                <footer>
-                </footer>
+                </section>
             </section>
-            <section id="box-books" class="box" tal:define="books view/last_books">
-                <header>
+            <section id="box-books" class="card" tal:define="books view/last_books">
+                <header class="card-header">
                     En librairie
                 </header>
-                <section tal:repeat="book books">
+                <section class="card-body" tal:repeat="book books">
                     <a href="${book/url}">
                         <img tal:attributes="src string:${book/url}/@@images/cover/mini" />
                         <h5>${book/title}</h5>
@@ -153,7 +136,7 @@
                         </div>
                     </a>
                 </section>
-                <footer>
+                <footer class="card-footer">
                     <a href="livres">Tous les livres</a>
                 </footer>
             </section>
