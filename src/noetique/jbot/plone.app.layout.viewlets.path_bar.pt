@@ -8,7 +8,7 @@
       <li tal:condition="repeat/crumb/end" class="breadcrumb-item active" aria-current="page">${python:crumb['Title']}</li>
       </tal:loop>
     </ol>
-    <aside id="marc-quote" class="pt-2 pb-2">
+    <aside id="marc-quote" class="pt-4 pb-2">
         <h2>"La pluie ne mouille pas les poissons" (M.H.)</h2>
         <p>
             Je suis un chercheur pratique.

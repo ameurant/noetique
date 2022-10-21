@@ -1,0 +1,24 @@
+#content-header {
+    background: url('/++theme++noetique/images/header-background.png') no-repeat 75% 0px fixed;
+    background-color: $noetique-grey-medium;
+}
+
+body.portaltype-plone-site #portal-breadcrumbs .breadcrumb {
+    display: none;
+}
+body #portal-breadcrumbs #marc-quote {
+    display: none;
+}
+body.portaltype-plone-site #portal-breadcrumbs #marc-quote {
+    display: block;
+}
+
+@include media-breakpoint-up(lg) {
+    #portal-globalnav .nav-item {
+        display: none;
+    }
+    #portal-globalnav .nav-item.index_html {
+        display: inline;
+    }
+}
+
