@@ -1,21 +1,17 @@
 # Site Noétique de Marc Halévy
 
-Plone 6 Classic Product for http://www.noetique.eu web site.
+Plone 6.1 Classic Product for http://www.noetique.eu web site.
 
+## Production installation
 
 ## Development installation
 
     git clone https://github.com/ameurant/noetique.git
     cd noetique
-    python3.9 -m venv .
-    ./bin/pip install -r https://dist.plone.org/release/6.0.0b3/requirements.txt
-    ./bin/buildout -c development.cfg
+    make install
+    make start
+    open http://localhost:1920
 
-
-## Start instance
-
-    ./bin/instance fg
-    open http://localhost:8080
 
 ## Theme development
 
