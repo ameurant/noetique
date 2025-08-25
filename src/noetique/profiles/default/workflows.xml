@@ -4,20 +4,20 @@
   <bindings>
 
     <default>
-      <bound-workflow workflow_id="simple_publication_workflow"/>
+      <bound-workflow workflow_id="simple_publication_workflow" />
     </default>
 
     <type type_id="File">
-      <bound-workflow workflow_id="(Default)"/>
+      <bound-workflow workflow_id="(Default)" />
     </type>
     <type type_id="Collection">
-      <bound-workflow workflow_id="one_state_workflow"/>
+      <bound-workflow workflow_id="one_state_workflow" />
     </type>
     <type type_id="Image">
-      <bound-workflow workflow_id="one_state_workflow"/>
+      <bound-workflow workflow_id="one_state_workflow" />
     </type>
     <type type_id="Folder">
-      <bound-workflow workflow_id="one_state_workflow"/>
+      <bound-workflow workflow_id="one_state_workflow" />
     </type>
 
   </bindings>

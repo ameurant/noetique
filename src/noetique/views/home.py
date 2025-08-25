@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from DateTime import DateTime
 from plone import api
 from Products.Five import BrowserView

@@ -2,7 +2,9 @@
 <registry>
 
   <record name="plone.default_page">
-    <value><element>index</element></value>
+    <value>
+      <element>index</element>
+    </value>
   </record>
 
 </registry>

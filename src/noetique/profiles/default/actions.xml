@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object name="portal_actions" meta_type="Plone Actions Tool">
- <object name="portal_tabs" meta_type="CMF Action Category">
-  <object name="index_html" meta_type="CMF Action">
-   <property name="title">Expertise &amp; Prospective dans le monde réel</property>
-  </object>
- </object>
+    <object name="portal_tabs" meta_type="CMF Action Category">
+        <object name="index_html" meta_type="CMF Action">
+            <property name="title">Expertise &amp; Prospective dans le monde réel</property>
+        </object>
+    </object>
 </object>

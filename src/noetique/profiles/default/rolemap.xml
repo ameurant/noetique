@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rolemap>
   <permissions>
-
     <permission name="noetique: Add Book" acquire="False">
-      <role name="Contributor"/>
-      <role name="Manager"/>
-      <role name="Owner"/>
-      <role name="Reviewer"/>
+      <role name="Contributor" />
+      <role name="Manager" />
+      <role name="Owner" />
+      <role name="Reviewer" />
     </permission>
-
   </permissions>
 </rolemap>
