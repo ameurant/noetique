@@ -16,5 +16,4 @@ clean:
 
 .venv/bin/buildout:
 	uv venv
-	uv pip install -r https://dist.plone.org/release/6.1.1/requirements.txt
-	uv pip install zc.buildout==4.1.10
+	uv pip install -r https://dist.plone.org/release/6.1.2/requirements.txt
