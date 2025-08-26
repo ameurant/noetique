@@ -1,19 +1,15 @@
-<a id="portal-logo"
-   title="Home"
-   style="text-decoration: none !important;"
-   tal:attributes="href view/navigation_root_url;
-                   title view/navigation_root_title"
-   i18n:domain="plone"
-   i18n:attributes="title">
+<div id="noetique-title" class="container py-2 h5 d-none d-md-block">Expertise &amp; Prospective dans le monde réel</div>
+<a id="portal-logo" class="pt-4" title="Home" style="text-decoration: none !important;" tal:attributes="href view/navigation_root_url;
+                   title view/navigation_root_title" i18n:domain="plone" i18n:attributes="title">
 
-   <div class="pt-5 d-flex justify-content-between align-items-end text-white" style="line-height: 0.5em !important;">
-   <section class="">
-         <div class="lh-1 display-3">Marc</div>
-         <div class="pb-3 lh-1 display-5">HALEVY</div>
-   </section>
-   <section class="d-none d-lg-block text-end">
-         <div class="lh-1 h4">Tisserand de la compréhension du devenir</div>
-         <div class="lh-1 h1">Conférencier, expert et auteur</div>
-   </section>
-   </div>
+      <div class="pt-5 d-flex justify-content-between align-items-end text-white" style="line-height: 0.5em !important;">
+            <section class="">
+                  <div class="lh-1 display-3">Marc</div>
+                  <div class="pb-3 lh-1 display-5">HALEVY</div>
+            </section>
+            <section class="d-none d-lg-block text-end">
+                  <div class="lh-1 h4">Tisserand de la compréhension du devenir</div>
+                  <div class="lh-1 h1">Conférencier, expert et auteur</div>
+            </section>
+      </div>
 </a>

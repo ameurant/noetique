@@ -35,7 +35,8 @@
       type="theme"
       />
 
-  <include package=".views" />
   <include package=".contents" />
+  <include package=".views" />
+
 
 </configure>

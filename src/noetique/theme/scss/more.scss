@@ -1,39 +1,53 @@
 #content-header {
-    background: url('/++theme++noetique/images/header-background.png') no-repeat 75% 0px fixed;
-    background-color: $noetique-grey-medium;
+  background: url("/++theme++noetique/images/header-background.png") no-repeat
+    75% 0px fixed;
+  background-color: $noetique-grey-medium-dark;
 }
-
+#content-header.pt-3 {
+  padding-top: 0rem;
+}
+#content-header.flex-lg-row {
+  flex-direction: column;
+}
+#content-header #portal-top {
+  width: 100%;
+  background-color: $noetique-grey-dark;
+  color: $white;
+}
+/* Hide breadcrumbs on the Plone site */
 body.portaltype-plone-site #portal-breadcrumbs .breadcrumb {
-    display: none;
-}
-body #portal-breadcrumbs #marc-quote {
-    display: none;
-}
-body.portaltype-plone-site #portal-breadcrumbs #marc-quote {
-    display: block;
+  display: none;
 }
 
+#noetique-quote {
+  color: $noetique-grey-medium;
+}
 @include media-breakpoint-up(lg) {
-    #portal-globalnav .nav-item {
-        display: none;
-    }
-    #portal-globalnav .nav-item.index_html {
-        display: inline;
-    }
+  #content-header {
+    background-position-y: 40px;
+  }
 }
 
 .card-header {
-    background-color: $noetique-grey-dark;
-    color: $white;
+  background-color: $noetique-grey-dark;
+  color: $white;
 }
+
 .card-body {
-    background-color:  $noetique-grey-light;
+  background-color: $noetique-grey-light;
 }
+
 .card-footer {
-    background-color: $noetique-grey-light;
-    color: $black;
+  background-color: $noetique-grey-light;
+  color: $black;
 }
 
 #home-boxes .card + .card {
-    margin-top: 2em;
+  margin-top: 2em;
+}
+
+/* A vérifier que c'est corrigé à partir de beta 4 */
+#search-filter,
+#results-count {
+  display: none;
 }

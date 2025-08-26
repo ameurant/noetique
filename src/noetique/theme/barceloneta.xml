@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rules xmlns="http://namespaces.plone.org/diazo"
-       xmlns:css="http://namespaces.plone.org/diazo/css"
-       xmlns:xhtml="http://www.w3.org/1999/xhtml"
-       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-       xmlns:xi="http://www.w3.org/2001/XInclude">
+  xmlns:css="http://namespaces.plone.org/diazo/css"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <!-- <xi:include href="++theme++barceloneta/grid-col-marker.xml"/> -->
 
@@ -43,7 +43,7 @@
 
   <!-- Content header -->
   <replace css:theme="#portal-logo" css:content="#portal-logo" mode="raw" />
-   <drop css:content="#portal-logo"  />
+  <drop css:content="#portal-logo" />
 
   <replace css:theme-children="#portal-top" css:content-children="#portal-header" />
 
@@ -68,24 +68,15 @@
   <after css:theme-children="#portal-footer-wrapper" css:content-children="#portal-footer-wrapper" css:if-content="#portal-footer-wrapper #portletmanager-plone-footerportlets"></after>
 
   <!-- Replace footer information with Plone version. -->
-  <replace
-      css:theme-children="#portal-footer .copyright > div"
-      css:content-children="#portal-footer-wrapper #portal-footer-signature .card-body"
-      />
+  <replace css:theme-children="#portal-footer .copyright > div" css:content-children="#portal-footer-wrapper #portal-footer-signature .card-body" />
   <drop css:theme="#portal-footer .copyright" css:if-not-content="#portal-footer-wrapper #portal-footer-signature" />
 
   <!-- Replace colophon information with Plone version. -->
-  <replace
-      css:theme-children="#portal-footer .colophon > div"
-      css:content-children="#portal-footer-wrapper #portal-colophon .card-body"
-      />
+  <replace css:theme-children="#portal-footer .colophon > div" css:content-children="#portal-footer-wrapper #portal-colophon .card-body" />
   <drop css:theme="#portal-footer .colophon" css:if-not-content="#portal-footer-wrapper #portal-colophon" />
 
   <!-- Replace site-actions with Plone version. -->
-  <replace
-      css:theme-children="#portal-footer .site-actions > div"
-      css:content="#portal-footer-wrapper .actions-site_actions"
-      />
+  <replace css:theme-children="#portal-footer .site-actions > div" css:content="#portal-footer-wrapper .actions-site_actions" />
   <drop css:theme="#portal-footer .site-actions" css:if-not-content="#portal-footer-wrapper .actions-site_actions" />
 
   <!-- Move all other footer portlets into doormat area. -->
@@ -107,7 +98,11 @@
             <xsl:when css:test=".card">
               <xsl:choose>
                 <xsl:when css:test=".card-header:not(.titleless)">
-                  <div class="headline"><h2><xsl:apply-templates select="./node()[@class='card-header']/node()" /></h2></div>
+                  <div class="headline">
+                    <h2>
+                      <xsl:apply-templates select="./node()[@class='card-header']/node()" />
+                    </h2>
+                  </div>
                 </xsl:when>
               </xsl:choose>
               <xsl:choose>
@@ -115,8 +110,13 @@
                   <ul>
                     <xsl:for-each css:select=".portletItem">
                       <li>
-                        <a><xsl:copy-of select="a/attribute::*" /><xsl:apply-templates select="./a/text()" /></a>
-                        <small><xsl:value-of css:select=".portletItemDetails" /></small>
+                        <a>
+                          <xsl:copy-of select="a/attribute::*" />
+                          <xsl:apply-templates select="./a/text()" />
+                        </a>
+                        <small>
+                          <xsl:value-of css:select=".portletItemDetails" />
+                        </small>
                       </li>
                     </xsl:for-each>
                   </ul>
@@ -126,7 +126,9 @@
                 </xsl:otherwise>
               </xsl:choose>
               <xsl:if css:test=".card-footer">
-                <p><xsl:apply-templates select="./node()[@class='card-footer']/node()" /></p>
+                <p>
+                  <xsl:apply-templates select="./node()[@class='card-footer']/node()" />
+                </p>
               </xsl:if>
             </xsl:when>
             <xsl:otherwise>
@@ -139,10 +141,7 @@
   </replace>
 
   <!-- Add additional footer content, like script tags (from site settings). -->
-  <after
-      css:theme-children="html body"
-      content="//footer[@id='portal-footer-wrapper']/*[not(@class='row')]"
-      />
+  <after css:theme-children="html body" content="//footer[@id='portal-footer-wrapper']/*[not(@class='row')]" />
 
   <!-- toolbar -->
   <replace css:theme="#portal-toolbar" css:content="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated" />
