@@ -1,147 +1,105 @@
 <html metal:use-macro="here/main_template/macros/master" i18n:domain="noetique">
 
   <metal:main fill-slot="main">
-    <div id="home-boxes" class="row">
-      <div class="col-12 col-lg-6">
-        <section id="box-news" class="card" tal:define="news view/last_news" tal:condition="news">
-          <header class="card-header">
-                    A la une
-          </header>
-          <section class="card-body">
-            <a href="${news/url}" class="text-black">
-              <h4>${news/title}</h4>
-              <tal:if tal:condition="news/has_image">
-                <img tal:attributes="src string:${news/url}/@@images/image/mini" />
-              </tal:if>
-              <p>
-                           ${news/description}
-              </p>
-            </a>
-          </section>
-          <footer class="card-footer">
-            <a class="card-link" href="actualites">Toutes les actualités</a>
-          </footer>
-        </section>
-        <section id="box-agenda" class="card" tal:define="events view/next_events">
-          <header class="card-header">
-                    Agenda
-          </header>
-          <section class="card-body" tal:repeat="event events">
-            <a href="${event/url}">
-              <h5>${event/title}</h5>
-              <p>
-                            ${event/location}
-                <br />
-                <span class="pat-moment" data-pat-moment="format:Do MMMM YYYY;">${event/start}</span>
-              </p>
-            </a>
-          </section>
-          <footer class="card-footer">
-            <a href="agenda">Tout l'agenda</a>
-          </footer>
-        </section>
-        <section id="box-articles" class="card" tal:define="articles view/last_articles">
-          <header class="card-header">
-                    Billets
-          </header>
-          <section class="card-body" tal:repeat="article articles">
-            <a href="${article/url}">
-              <h5>${article/title}</h5>
-              <p>
-                            ${article/description}<br />
-              <span class="pat-moment" data-pat-moment="format:Do/MM/YYYY;">${article/effective}</span>
+    <style>
+        .row {
+        background-color: #EEE;
+        padding: 1rem;
+        }
+    </style>
 
-
-            </p>
+    <section id="noetique-section-agenda" tal:define="events view/next_events">
+      <div class="container">
+        <h2>Rendez-vous publics</h2>
+        <article tal:define="events view/next_events" tal:repeat="event events" class="card">
+          <a href="${event/url}">
+            <h3>${event/title}</h3>
+            <span class="pat-moment" data-pat-moment="format:Do MMMM YYYY;">${event/start}</span>
+              -
+            <span>${event/location}</span>
+            <p>${event/description}</p>
           </a>
-        </section>
-        <footer class="card-footer">
-          <a href="billets">Tous les billets</a>
-        </footer>
-      </section>
-    </div>
-    <div class="col-12 col-lg-6">
-      <section id="box-thought" class="card" tal:define="thought view/last_thought" tal:condition="thought">
-        <header class="card-header">
-                    Pensées
-        </header>
-        <section class="card-body">
-          <p>
-                        Journal philosophique et spirituel de Marc Halévy
-          </p>
-          <p>
-            <a href="${thought/url}">${thought/title}</a>
-          </p>
-        </section>
-        <footer class="card-footer">
+        </article>
+      </div>
+    </section>
+
+    <section id="noetique-section-thoughts" tal:define="thoughts view/last_thoughts">
+      <div class="container">
+        <h2>Journal philosophique au quotidien</h2>
+        <footer>
           <a href="journal">Tout le journal</a>
         </footer>
-      </section>
-      <section id="box-video" class="card" tal:define="video view/last_video" tal:condition="video">
-        <header class="card-header">
-                    Dernière vidéo
-        </header>
-        <section class="card-body">
-          <iframe frameborder="0" allowfullscreen width="100%" tal:attributes="src string:https://www.youtube.com/embed/${video/video_id}"></iframe>
-        </section>
-        <footer class="card-body">
-          <a href="https://www.youtube.com/channel/UCplO3-iuNvhEinVj8Sxh6XA">Chaîne Youtube de Marc Halévy</a>
+      </div>
+    </section>
+
+    <section id="noetique-section-articles" tal:define="articles view/last_articles">
+      <div class="container">
+        <h2>Ce que j'ai à dire au monde sur le monde</h2>
+        <footer>
+          <a href="journal">Tous les articles</a>
         </footer>
-      </section>
-      <section id="box-bebooda" class="card">
-        <header class="card-header">
-                    Webinaires & Masterclasses
-        </header>
-        <section class="card-body">
-          <p>
-            <img class="float-end" src="/++theme++noetique/images/lunette-verte.png" />
-                Pour comprendre ce qui arrive !
-                    Voir et agir avec les lunettes vertes.
-                    Se hisser sur "<em>la courbe verte</em>" du nouveau monde.
-                Tous publics, entrepreneurs, dirigeants, formateurs,
-          </p>
-          <ul class="list-group">
-            <li class="list-group-item">
-              <a href="https://www.lacabaneverte.fr/programme-des-lecons-de-la-courbe-verte/" target="_blank">
-                           Participer aux séminaires résidentiels
-              </a>
-            </li>
-            <li class="list-group-item">
-              <a href="https://bebooda.fr/" target="_blank">
-                            Aussi à suivre en ligne sur
-                <img id="logo-bebooda" width="150px" src="/++theme++noetique/images/logo-bebooda.png" />
-              </a>
-            </li>
-          </ul>
-        </section>
-      </section>
-      <section id="box-books" class="card" tal:define="books view/last_books">
-        <header class="card-header">
-                    En librairie
-        </header>
-        <section class="card-body" tal:repeat="book books">
+      </div>
+    </section>
+
+    <section id="noetique-section-books" tal:define="books view/last_books">
+      <div class="container">
+        <h2>Mes derniers livres</h2>
+        <article class="card" tal:repeat="book books">
           <a href="${book/url}">
             <img tal:attributes="src string:${book/url}/@@images/cover/mini" />
             <h5>${book/title}</h5>
-
-            <div>
-              <strong>Auteur</strong> : ${book/author}<br />
-            <strong>Editeur</strong> : ${book/publisher}<br />
+          </a>
+          <strong>Auteur</strong> : ${book/author}
+          <br />
+          <strong>Editeur</strong> : ${book/publisher}
+          <br />
           <strong>Année</strong> : ${book/year}
-        </div>
-      </a>
+        </article>
+        <footer>
+          <a href="livres">Tous les ouvrages</a>
+        </footer>
+      </div>
     </section>
-    <footer class="card-footer">
-      <a href="livres">Tous les livres</a>
-    </footer>
-  </section>
-</div>
-<div class="stop-float"></div>
-</div>
-<script type="text/javascript" language="javascript">
+
+    <section id="noetique-section-videos">
+      <div class="container">
+        <h2>Vous préférez en images</h2>
+        <article class="card">
+          <!--<iframe frameborder="0" allowfullscreen width="100%" tal:attributes="src string:https://www.youtube.com/embed/${video/video_id}"></iframe>-->
+        </article>
+        <footer>
+          <a href="https://www.youtube.com/channel/UCplO3-iuNvhEinVj8Sxh6XA">Chaîne Youtube de Marc Halévy</a>
+        </footer>
+      </div>
+    </section>
+
+    <section id="noetique-section-services">
+      <div class="container">
+        <h2>Puis-je vous aider ?</h2>
+        <p class="h4">Services aux dirigeants, experts et penseurs</p>
+        <div class="card-group">
+          <article class="card">
+Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur.
+          </article>
+          <article class="card">
+Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur.
+          </article>
+          <article class="card">
+Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur.
+
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript" language="javascript">
         var box_video_width = $('#box-video').width();
         $('#box-video iframe').css('height', box_video_width/16.0*9.0);
-</script>
-</metal:main>
+    </script>
+    <script>
+        /* Sections are full width */
+        $("div.outer-wrapper > div").removeClass("container"); /* Remove container of https://github.com/plone/plonetheme.barceloneta/blob/master/plonetheme/barceloneta/theme/index.html */
+    </script>
+  </metal:main>
 
 </html>

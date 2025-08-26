@@ -19,8 +19,6 @@ class HomeView(BrowserView):
             sort_order="reverse",
             sort_limit=3,
         )
-        if len(brains) < 1:
-            return None
 
         articles = []
         for b in brains[:3]:
@@ -34,30 +32,7 @@ class HomeView(BrowserView):
         return articles
 
     @property
-    def last_news(self):
-        brains = api.content.find(
-            portal_type="News Item",
-            path=self.portal_path + "/actualites",
-            review_state="published",
-            sort_on="effective",
-            sort_order="reverse",
-            sort_limit=3,
-        )
-        if len(brains) < 1:
-            return None
-
-        brain = brains[0]
-        obj = brain.getObject()
-        return {
-            "title": brain.Title,
-            "description": brain.Description,
-            "url": brain.getURL(),
-            "effective": brain.effective,
-            "has_image": True if obj.image else False,
-        }
-
-    @property
-    def last_thought(self):
+    def last_thoughts(self):
         brains = api.content.find(
             portal_type="Document",
             path=self.portal_path + "/journal",
@@ -66,16 +41,16 @@ class HomeView(BrowserView):
             sort_order="reverse",
             sort_limit=3,
         )
-        if len(brains) < 1:
-            return None
-
-        brain = brains[0]
-        return {
-            "title": brain.Title,
-            "description": brain.Description,
-            "url": brain.getURL(),
-            "effective": brain.effective,
-        }
+        thoughts = []
+        for b in brains[:3]:
+            thought = {
+                "title": b.Title,
+                "description": b.Description,
+                "url": b.getURL() + "/view",
+                "effective": b.effective.ISO(),
+            }
+            thoughts.append(thought)
+        return thoughts
 
     @property
     def next_events(self):
