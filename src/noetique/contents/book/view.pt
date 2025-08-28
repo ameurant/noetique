@@ -1,63 +1,62 @@
 <html metal:use-macro="here/main_template/macros/master" i18n:domain="noetique">
-
     <metal:main fill-slot="main">
 
         <h1 class="documentFirstHeading">
             ${context/title}
         </h1>
-        <img src="${context/absolute_url}/@@images/cover/mini" class="image-left" />
-        <div>
-            <strong>Auteur :</strong> ${context/author}
-        -
-            <strong>Année de publication :</strong> ${context/year}
-        </div>
-        <div>
-            <strong>Editeur :</strong> ${context/publisher}
-            <tal:if tal:condition="context/collection">
-            -
-                <strong>Collection :</strong> ${context/collection}
-            </tal:if>
-            <tal:if tal:condition="context/kind">
-            -
-                <strong>Genre :</strong> ${context/kind}
-            </tal:if>
-        </div>
-        <div>
-            <strong>Langue :</strong> ${context/langue}
-        -
-            <strong>Format :</strong> ${context/format}
-        -
-            <strong>Pages :</strong> ${context/pages}
-        </div>
-        <div tal:condition="context/audience">
-            <strong>Public :</strong> ${context/audience}
-        </div>
-        <div>
-            <strong>ISBN :</strong> ${context/isbn}
-        </div>
-        <div tal:condition="nocall:context/book">
-            <strong>Version gratuite :</strong>
-            <a tal:attributes="href string:${context/absolute_url}/@@download/book/${context/book/filename}">
+        <div class="row align-items-center">
+            <div class="col-md-2 d-flex justify-content-center">
+                <img src="${context/absolute_url}/@@images/cover/mini" class="d-block float-md-start me-md-3 mb-2" />
+            </div>
+            <div class="col-md-10">
+                <section>
+                    <strong>Auteur :</strong> ${context/author}
+                    -
+                    <strong>Année de publication :</strong> ${context/year}
+                </section>
+                <section>
+                    <strong>Editeur :</strong> ${context/publisher}
+                    <tal:if tal:condition="context/collection">
+                        -
+                        <strong>Collection :</strong> ${context/collection}
+                    </tal:if>
+                    <tal:if tal:condition="context/kind">
+                        -
+                        <strong>Genre :</strong> ${context/kind}
+                    </tal:if>
+                </section>
+                <section>
+                    <strong>Langue :</strong> ${context/langue}
+                    -
+                    <strong>Format :</strong> ${context/format}
+                    -
+                    <strong>Pages :</strong> ${context/pages}
+                </section>
+                <section tal:condition="context/audience">
+                    <strong>Public :</strong> ${context/audience}
+                </section>
+                <section>
+                    <strong>ISBN :</strong> ${context/isbn}
+                </section>
+                <section tal:condition="nocall:context/book">
+                    <strong>Version gratuite :</strong>
+                    <a tal:attributes="href string:${context/absolute_url}/@@download/book/${context/book/filename}">
             Télécharger
-            </a>
+                    </a>
+                </section>
+                <p class="mt-3 fs-5">${context/description}</p>
+            </div>
         </div>
-        <p></p>
-        <p>
-       ${context/description}
-        </p>
 
         <tal:if tal:define="summary view/w/summary/render" tal:condition="summary">
-            <h3>Résumé</h3>
+            <h2 class="mt-5">Résumé</h2>
             <div tal:replace="structure summary" />
         </tal:if>
 
         <tal:if tal:define="text view/w/foreword/render" tal:condition="text">
-            <h3>Préface</h3>
+            <h2 class="mt-5">Préface</h2>
             <div tal:replace="structure text" />
         </tal:if>
 
-
-
     </metal:main>
-
 </html>

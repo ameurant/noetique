@@ -83,15 +83,15 @@ class HomeView(BrowserView):
     @property
     def last_books(self):
         brains = api.content.find(
-            portal_type="noetique.site.Book",
+            portal_type="noetique.Book",
             path=self.portal_path + "/livres",
             review_state="published",
             sort_on="effective",
             sort_order="reverse",
-            sort_limit=3,
+            sort_limit=4,
         )
         books = []
-        for b in brains[:3]:
+        for b in brains[:4]:
             obj = b.getObject()
             book = {
                 "title": obj.title,

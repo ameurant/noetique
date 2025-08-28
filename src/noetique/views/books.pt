@@ -1,0 +1,55 @@
+<html metal:use-macro="here/main_template/macros/master" i18n:domain="noetique">
+
+    <metal:content-core fill-slot="content-core">
+
+        <metal:block use-macro="context/@@listing_view/macros/content-core">
+            <metal:entries fill-slot="entry">
+                <article class="card mb-3">
+                    <a href="${item_url}" class="text-decoration-none">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 d-flex justify-content-center">
+                                <img tal:condition="obj/cover" tal:attributes="src string: ${obj/absolute_url}/@@images/cover/mini" class="img-fluid p-3" />
+                            </div>
+                            <div class="col-md-10">
+                                <div class="card-body">
+                                    <h3 class="card-title">${obj/title}</h3>
+                                    <section class="card-text">
+                                        <section>
+                                            <strong>Année de publication :</strong> ${obj/year}
+                                        </section>
+                                        <section>
+                                            <strong>Editeur :</strong> ${obj/publisher}
+                                            <tal:if tal:condition="obj/collection">
+                        -
+                                                <strong>Collection :</strong> ${obj/collection}
+                                            </tal:if>
+                                            <tal:if tal:condition="obj/kind">
+                        -
+                                                <strong>Genre :</strong> ${obj/kind}
+                                            </tal:if>
+                                        </section>
+                                        <section>
+                                            <strong>Langue :</strong> ${obj/langue}
+                    -
+                                            <strong>Format :</strong> ${obj/format}
+                    -
+                                            <strong>Pages :</strong> ${obj/pages}
+                                        </section>
+                                        <section tal:condition="obj/audience">
+                                            <strong>Public :</strong> ${obj/audience}
+                                        </section>
+                                        <section>
+                                            <strong>ISBN :</strong> ${obj/isbn}
+                                        </section>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </metal:entries>
+        </metal:block>
+
+    </metal:content-core>
+
+</html>
