@@ -9,7 +9,9 @@
     <property name="schema">noetique.contents.IBook</property>
     <property name="klass">noetique.contents.Book</property>
     <property name="behaviors">
-        <element value="plone.app.content.interfaces.INameFromTitle" />
+        <element value="plone.namefromtitle" />
+        <element value="plone.locking" />
+        <element value="plone.publication" />
     </property>
 
     <property name="global_allow">True</property>
