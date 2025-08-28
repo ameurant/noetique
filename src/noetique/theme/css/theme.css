@@ -1,9 +1,9 @@
 @charset "UTF-8";
 :root {
-  --plone-link-color: green;
+  --plone-link-color: #8595ac;
   --plone-link-color-on-dark: #16a1e3;
   --plone-link-color-on-grey: #086ca3;
-  --plone-link-hover-color: #003400;
+  --plone-link-hover-color: #5d6e88;
   --plone-state-draft: #fab82a;
   --plone-state-pending: #e2e721;
   --plone-state-private: #c4183c;
@@ -79,8 +79,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: green;
-  --bs-link-hover-color: #006600;
+  --bs-link-color: #8595ac;
+  --bs-link-hover-color: #6a778a;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -123,6 +123,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 0.5rem;
   font-weight: 400;
   line-height: 1.2;
+  color: #6b7777;
 }
 
 h1, .h1 {
@@ -4082,11 +4083,11 @@ textarea.form-control-lg {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
   --bs-card-title-spacer-y: 0.5rem;
-  --bs-card-border-width: 0px;
+  --bs-card-border-width: 1px;
   --bs-card-border-color: var(--bs-border-color-translucent);
   --bs-card-border-radius: 0.375rem;
   --bs-card-box-shadow: ;
-  --bs-card-inner-border-radius: calc(0.375rem - 0px);
+  --bs-card-inner-border-radius: calc(0.375rem - 1px);
   --bs-card-cap-padding-y: 0.5rem;
   --bs-card-cap-padding-x: 1rem;
   --bs-card-cap-bg: rgba(0, 0, 0, 0.03);
@@ -5382,7 +5383,7 @@ textarea.form-control-lg {
   --bs-popover-header-padding-x: 1rem;
   --bs-popover-header-padding-y: 0.5rem;
   --bs-popover-header-font-size: 1rem;
-  --bs-popover-header-color: ;
+  --bs-popover-header-color: #6b7777;
   --bs-popover-header-bg: #f0f0f0;
   --bs-popover-body-padding-x: 1rem;
   --bs-popover-body-padding-y: 1rem;
@@ -11585,7 +11586,7 @@ label.required:after {
 }
 
 .select2-results .select2-highlighted {
-  color: #006600;
+  color: #6a778a;
 }
 
 .pattern-relateditems-item-title, .pattern-relateditems-item-title[class*=contenttype-]:before,
@@ -12914,6 +12915,28 @@ p.highlight-paragraph {
   padding: 1rem;
 }
 
+/* Manager */
+body #plone-contentmenu-display {
+  display: none;
+}
+body.userrole-manager #plone-contentmenu-display {
+  display: block;
+}
+
+/* Hide elements */
+body.portaltype-plone-site #portal-breadcrumbs .breadcrumb {
+  display: none; /* Hide breadcrumbs on the Plone site */
+}
+
+#section-byline {
+  display: none;
+}
+
+body.template-summary_view h2 + div, body.template-summary_view .h2 + div {
+  display: none; /* Hide byline on Summary view */
+}
+
+/* Header */
 #content-header {
   background: url("/++theme++noetique/images/header-background.png") no-repeat 75% 0px fixed;
   background-color: #535b5d;
@@ -12933,42 +12956,41 @@ p.highlight-paragraph {
   color: #fff;
 }
 
-/* Hide breadcrumbs on the Plone site */
-body.portaltype-plone-site #portal-breadcrumbs .breadcrumb {
-  display: none;
-}
-
-#noetique-quote {
-  color: #6b7777;
-}
-
 @media (min-width: 992px) {
   #content-header {
     background-position-y: 40px;
   }
 }
-.card-header {
-  background-color: #444750;
-  color: #fff;
+/* Marc quote */
+body #noetique-quote {
+  display: none;
+}
+
+body.template-home_view #noetique-quote {
+  color: #6b7777;
+  display: block;
+}
+
+/* .card-header {
+  background-color: $noetique-grey-dark;
+  color: $white;
 }
 
 .card-body {
-  background-color: #dbdcdd;
+  background-color: $noetique-grey-light;
 }
 
 .card-footer {
-  background-color: #dbdcdd;
-  color: #000;
+  background-color: $noetique-grey-light;
+  color: $black;
+} */
+body.template-home_view .card a,
+body.template-books_view .card a {
+  color: #212529;
 }
-
-#home-boxes .card + .card {
-  margin-top: 2em;
-}
-
-/* A vérifier que c'est corrigé à partir de beta 4 */
-#search-filter,
-#results-count {
-  display: none;
+body.template-home_view .card a:hover,
+body.template-books_view .card a:hover {
+  text-decoration: none !important;
 }
 
 /*# sourceMappingURL=theme.css.map */

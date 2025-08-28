@@ -10,7 +10,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="noetique"
+      title="Noetique"
       description="Installs the noetique add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/default"
@@ -18,7 +18,7 @@
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="noetique (uninstall)"
+      title="Noetique (uninstall)"
       description="Uninstalls the noetique add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/uninstall"
@@ -37,6 +37,5 @@
 
   <include package=".contents" />
   <include package=".views" />
-
 
 </configure>

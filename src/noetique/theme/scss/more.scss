@@ -1,3 +1,24 @@
+/* Manager */
+body {
+  #plone-contentmenu-display {
+    display: none;
+  }
+  &.userrole-manager #plone-contentmenu-display {
+    display: block;
+  }
+}
+/* Hide elements */
+body.portaltype-plone-site #portal-breadcrumbs .breadcrumb {
+  display: none; /* Hide breadcrumbs on the Plone site */
+}
+#section-byline {
+  display: none;
+}
+body.template-summary_view h2 + div {
+  display: none; /* Hide byline on Summary view */
+}
+/* Header */
+
 #content-header {
   background: url("/++theme++noetique/images/header-background.png") no-repeat
     75% 0px fixed;
@@ -14,21 +35,23 @@
   background-color: $noetique-grey-dark;
   color: $white;
 }
-/* Hide breadcrumbs on the Plone site */
-body.portaltype-plone-site #portal-breadcrumbs .breadcrumb {
-  display: none;
-}
 
-#noetique-quote {
-  color: $noetique-grey-medium;
-}
 @include media-breakpoint-up(lg) {
   #content-header {
     background-position-y: 40px;
   }
 }
 
-.card-header {
+/* Marc quote */
+body #noetique-quote {
+  display: none;
+}
+body.template-home_view #noetique-quote {
+  color: $noetique-grey-medium;
+  display: block;
+}
+
+/* .card-header {
   background-color: $noetique-grey-dark;
   color: $white;
 }
@@ -40,14 +63,14 @@ body.portaltype-plone-site #portal-breadcrumbs .breadcrumb {
 .card-footer {
   background-color: $noetique-grey-light;
   color: $black;
-}
+} */
 
-#home-boxes .card + .card {
-  margin-top: 2em;
-}
-
-/* A vérifier que c'est corrigé à partir de beta 4 */
-#search-filter,
-#results-count {
-  display: none;
+body.template-home_view .card,
+body.template-books_view .card {
+  a {
+    color: $body-color;
+  }
+  a:hover {
+    text-decoration: none !important;
+  }
 }

@@ -4,6 +4,8 @@ $noetique-grey-light: #dbdcdd;
 $noetique-grey-medium: #6b7777;
 $noetique-grey-medium-dark: #535b5d;
 $noetique-grey-dark: #444750;
+$noetique-grey-blue: #75859c;
+$noetique-link: #8595ac;
 
 // *** Variable overrides ***
 
@@ -11,7 +13,7 @@ $enable-rounded: false;
 $navbar-light-color: #fff;
 $navbar-barceloneta-background: $noetique-grey-medium;
 $breadcrumb-bg: $noetique-grey-light;
-$card-border-width: 0px;
+//$card-border-width: 0px;
 
 $primary: $noetique-grey-dark;
 $secondary: $noetique-grey-light;
@@ -21,10 +23,11 @@ $secondary: $noetique-grey-light;
 // $h1-font-size: $font-size-base * 3;
 // $h2-font-size: $font-size-base * 2.5;
 
+$headings-color: $noetique-grey-medium;
 $link-decoration: none;
 $link-hover-decoration: underline;
-$link-color: green;
-$plone-link-color: green;
+$link-color: $noetique-link;
+$plone-link-color: $noetique-link;
 //$plone-link-color-on-dark: red;
 //$plone-link-color-on-grey: yellow;
 $plone-link-hover-color: darken($plone-link-color, 15%) !default;

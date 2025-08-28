@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <registry>
-
   <record name="plone.default_page">
     <value>
       <element>index</element>
     </value>
   </record>
-
+  <record name="plone.navigation_depth">
+    <value>1</value>
+  </record>
 </registry>
