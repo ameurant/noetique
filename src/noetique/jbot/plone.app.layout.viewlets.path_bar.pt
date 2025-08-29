@@ -13,7 +13,7 @@
         <li class="breadcrumb-item active" aria-current="page" tal:condition="repeat/crumb/end">${python:crumb['Title']}</li>
       </tal:loop>
     </ol>
-    <aside id="noetique-quote" class="d-none d-lg-block pt-4 pb-2">
+    <aside id="noetique-quote" class="d-none d-lg-block pt-4 pb-2 mt-4 mb-0">
       <h2>"La pluie ne mouille pas les poissons" (M.H.)</h2>
       <p>
             Je suis un chercheur pratique.

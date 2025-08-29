@@ -10,6 +10,28 @@ class HomeView(BrowserView):
         return "/".join(portal.getPhysicalPath())
 
     @property
+    def last_news(self):
+        brains = api.content.find(
+            portal_type="News Item",
+            path=self.portal_path + "/actualites",
+            review_state="published",
+            sort_on="effective",
+            sort_order="reverse",
+            sort_limit=2,
+        )
+
+        items = []
+        for b in brains[:2]:
+            item = {
+                "title": b.Title,
+                "description": b.Description,
+                "url": b.getURL() + "/view",
+                "effective": b.effective.ISO(),
+            }
+            items.append(item)
+        return items
+
+    @property
     def last_articles(self):
         brains = api.content.find(
             portal_type=("Document", "File"),
