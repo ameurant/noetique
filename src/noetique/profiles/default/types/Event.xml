@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Event">
+    <property name="behaviors">
+        <element value="plone.eventattendees" />
+        <element value="plone.locking" />
+        <element value="plone.eventbasic" />
+        <element value="plone.eventcontact" />
+        <element value="plone.eventlocation" />
+        <element value="plone.textindexer" />
+        <element value="plone.locking" />
+        <element value="plone.relateditems" />
+        <element value="plone.richtext" />
+        <element value="plone.shortname" />
+    </property>
+</object>
