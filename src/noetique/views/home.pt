@@ -24,7 +24,7 @@
     <section id="noetique-section-agenda" tal:define="events view/next_events" class="mt-4">
       <div class="container">
         <h1 class="text-center">
-          <tal:icon tal:replace="structure python:icons.tag('calendar')" />
+          <tal:icon tal:replace="structure python:icons.tag('stopwatch')" />
           Rendez-vous publics
         </h1>
         <article tal:define="events view/next_events" tal:repeat="event events" tal:attributes="class python:'border-top border-bottom' if repeat['event'].index == 0 else 'border-bottom'">
@@ -44,9 +44,10 @@
     <section id="noetique-section-thoughts" tal:define="thoughts view/last_thoughts" class="mt-4 bg-light">
       <div class="container">
         <h1 class="text-center">
-          <tal:icon tal:replace="structure python:icons.tag('journal')" />
+          <tal:icon tal:replace="structure python:icons.tag('vector-pen')" />
           Journal philosophique au quotidien
         </h1>
+        <article>TODO</article>
         <footer class="mt-3 h5 text-end">
           <a href="${view/portal_path}/journal">Tout le journal</a>
         </footer>
@@ -56,9 +57,10 @@
     <section id="noetique-section-articles" tal:define="articles view/last_articles" class="mt-4">
       <div class="px-4">
         <h1 class="text-center">
-          <tal:icon tal:replace="structure python:icons.tag('paperclip')" />
-          Ce que j'ai à dire au monde sur le monde
+          <tal:icon tal:replace="structure python:icons.tag('megaphone')" />
+          Billets
         </h1>
+        <p class="text-center h3">Ce que j'ai à dire au monde sur le monde</p>
         <div class="row">
           <div class="col-12 col-lg-4" tal:repeat="item articles">
             <article class="card h-100">
@@ -133,7 +135,7 @@
           <tal:icon tal:replace="structure python:icons.tag('info-circle')" />
           Puis-je vous aider ?
         </h1>
-        <p class="text-center h4">Services aux dirigeants, experts et penseurs</p>
+        <p class="text-center h3">Services aux dirigeants, experts et penseurs</p>
         <!-- <div class="card-group">
           <article class="card">
 Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur.
@@ -146,6 +148,7 @@ Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus
 
           </article>
         </div> -->
+        <article>TODO</article>
       </div>
     </section>
 
