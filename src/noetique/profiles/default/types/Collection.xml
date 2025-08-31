@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Collection">
+    <property name="behaviors">
+        <element value="plone.basic" />
+        <element value="plone.collection" />
+        <element value="plone.excludefromnavigation" />
+        <element value="plone.locking" />
+        <element value="plone.namefromtitle" />
+        <element value="plone.richtext" />
+        <element value="plone.shortname" />
+    </property>
+</object>

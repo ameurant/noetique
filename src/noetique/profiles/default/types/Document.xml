@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Document">
+    <property name="behaviors">
+        <element value="plone.basic" />
+        <element value="plone.publication" />
+        <element value="plone.excludefromnavigation" />
+        <element value="plone.locking" />
+        <element value="plone.namefromtitle" />
+        <element value="plone.relateditems" />
+        <element value="plone.richtext" />
+        <element value="plone.shortname" />
+        <element value="plone.tableofcontents" />
+    </property>
+</object>
