@@ -56,20 +56,20 @@ class HomeView(BrowserView):
     @property
     def last_thoughts(self):
         brains = api.content.find(
-            portal_type="Document",
-            path=self.portal_path + "/journal",
-            review_state="published",
+            portal_type="noetique.Post",
+            # path=self.portal_path + "/journal",
             sort_on="effective",
             sort_order="reverse",
             sort_limit=3,
         )
         thoughts = []
         for b in brains[:3]:
+            obj = b.getObject()
             thought = {
-                "title": b.Title,
-                "description": b.Description,
-                "url": b.getURL() + "/view",
-                "effective": b.effective.ISO(),
+                "title": obj.title,
+                "effective": obj.effective.isoformat(),
+                "teaser": obj.text.output[:250],
+                "url": obj.absolute_url() + "/view",
             }
             thoughts.append(thought)
         return thoughts

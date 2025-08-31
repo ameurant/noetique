@@ -1,3 +1,5 @@
+import datetime
+
 from plone.dexterity.content import Item
 from plone.supermodel import model
 from zope import schema
@@ -8,7 +10,11 @@ class IPost(model.Schema):
     """Post schema"""
 
     # fields
-    date = schema.Date(title="Date du post", required=True)
+    effective = schema.Datetime(
+        title="Moment du post",
+        required=True,
+        defaultFactory=lambda: datetime.datetime.now(),
+    )
 
 
 @implementer(IPost)
@@ -17,7 +23,7 @@ class Post(Item):
 
     @property
     def title(self):
-        computed_title = f"Le {self.date}"
+        computed_title = f"{self.effective.strftime('%A %d %B %Y')} à {self.effective.strftime('%HH%M')}"
         return computed_title
 
     @title.setter
