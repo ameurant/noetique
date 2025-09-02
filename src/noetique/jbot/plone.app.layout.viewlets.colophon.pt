@@ -1,0 +1,7 @@
+<div id="portal-colophon" i18n:domain="plone">
+    <div class="colophonWrapper">
+        <p class="text-center px-5 py-2">
+            Site propulsé par <a href="https://plone.org">Plone</a> depuis 20 ans grâce à <a href="http://www.netvaast.be">Netvaast</a>
+        </p>
+    </div>
+</div>
