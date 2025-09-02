@@ -2,6 +2,7 @@
 <object name="Link">
     <property name="behaviors">
         <element value="plone.basic" />
+        <element value="plone.publication" />
         <element value="plone.excludefromnavigation" />
         <element value="plone.namefromtitle" />
         <element value="plone.shortname" />
