@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <registry>
+
   <record name="plone.default_page">
     <value>
       <element>index</element>
@@ -8,4 +9,18 @@
   <record name="plone.navigation_depth">
     <value>1</value>
   </record>
+
+  <record name="plone.icon.contenttype/noetique-book">
+    <field type="plone.registry.field.TextLine">
+      <title>Book content type icon</title>
+    </field>
+    <value key="resource">++plone++bootstrap-icons/book.svg</value>
+  </record>
+  <record name="plone.icon.contenttype/noetique-post">
+    <field type="plone.registry.field.TextLine">
+      <title>Post content type icon</title>
+    </field>
+    <value key="resource">++plone++bootstrap-icons/vector-pen.svg</value>
+  </record>
+
 </registry>
