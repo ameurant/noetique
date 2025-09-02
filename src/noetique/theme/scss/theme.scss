@@ -33,6 +33,16 @@ $plone-link-color: $noetique-link;
 $plone-link-hover-color: darken($plone-link-color, 15%) !default;
 $plone-portlet-list-bullet: orangered;
 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1140px,
+);
+
+$footer-bg: $noetique-grey-dark;
+
 @import "@plone/plonetheme-barceloneta-base/scss/barceloneta.scss";
 
 // *** More SCSS ***

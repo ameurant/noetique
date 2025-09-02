@@ -46,31 +46,34 @@ body.template-summary_view h2 + div {
 body #noetique-quote {
   display: none;
 }
+
+/* Template home_view*/
 body.template-home_view #noetique-quote {
   color: $noetique-grey-medium;
   display: block;
 }
 
-/* .card-header {
-  background-color: $noetique-grey-dark;
-  color: $white;
-}
-
-.card-body {
-  background-color: $noetique-grey-light;
-}
-
-.card-footer {
-  background-color: $noetique-grey-light;
-  color: $black;
-} */
-
-body.template-home_view .card,
-body.template-books_view .card {
+body.template-home_view #content .card,
+body.template-books_view #content .card {
   a {
     color: $body-color;
   }
   a:hover {
     text-decoration: none !important;
   }
+}
+
+/* Template event_listing*/
+body.template-event_listing #content {
+  .cal_date {
+    min-width: 90px;
+  }
+  h1 + nav {
+    display: none;
+  }
+}
+
+#content #section-related {
+  border: 1px solid $noetique-grey-light;
+  padding: 1rem;
 }
