@@ -19,5 +19,6 @@ class VideosView(BrowserView):
                 "description": b.Description,
                 "video_id": b.getRemoteUrl.split("?v=")[1] if "?v=" in b.getRemoteUrl else "",
             }
-            videos.append(video)
+            if video["video_id"]:
+                videos.append(video)
         return videos
