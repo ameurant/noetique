@@ -2,7 +2,7 @@
 
   <metal:main fill-slot="main">
 
-    <section id="noetique-section-news" class="mt-0">
+    <section id="noetique-section-news" class="mt-2">
       <div class="container">
         <h1 class="text-center">
           <tal:icon tal:replace="structure python:icons.tag('pin')" />
@@ -21,7 +21,7 @@
       </div>
     </section>
 
-    <section id="noetique-section-agenda" tal:define="events view/next_events" class="mt-4">
+    <section id="noetique-section-agenda" tal:define="events view/next_events" class="mt-5">
       <div class="container">
         <h1 class="text-center">
           <tal:icon tal:replace="structure python:icons.tag('stopwatch')" />
@@ -41,7 +41,7 @@
       </div>
     </section>
 
-    <section id="noetique-section-thoughts" tal:define="thoughts view/last_thoughts" class="mt-4 pb-1 bg-light">
+    <section id="noetique-section-thoughts" tal:define="thoughts view/last_thoughts" class="mt-5 py-3 bg-light">
       <div class="container">
         <h1 class="text-center">
           <tal:icon tal:replace="structure python:icons.tag('vector-pen')" />
@@ -51,7 +51,6 @@
           <a href="${item/url}">
             <h5 class="pt-3 mb-0">
               ${item/title}
-                                                        <!--<time datetime="${item/effective}" class="pat-display-time" data-pat-display-time="output-format:Do MMMM YYYY;">${item/effective}</time>-->
             </h5>
             <div>${structure:item/teaser} ...</div>
           </a>
@@ -62,7 +61,7 @@
       </div>
     </section>
 
-    <section id="noetique-section-articles" tal:define="articles view/last_articles" class="mt-4">
+    <section id="noetique-section-articles" tal:define="articles view/last_articles" class="mt-5">
       <div class="px-4">
         <h1 class="text-center">
           <tal:icon tal:replace="structure python:icons.tag('megaphone')" />
@@ -91,7 +90,7 @@
       </div>
     </section>
 
-    <section id="noetique-section-books" tal:define="books view/last_books" class="mt-4">
+    <section id="noetique-section-books" tal:define="books view/last_books" class="mt-5">
       <div class="container">
         <h1 class="text-center">
           <tal:icon tal:replace="structure python:icons.tag('book')" />
@@ -101,9 +100,9 @@
           <div class="col-12 col-md-6 col-lg-3" tal:repeat="book books">
             <article class="card h-100">
               <a href="${book/url}">
-                <img class="card-img-top p-5" tal:attributes="src string:${book/url}/@@images/cover/mini" />
+                <img class="card-img-top px-5 pt-5" tal:attributes="src string:${book/url}/@@images/cover/mini" />
                 <div class="card-body">
-                  <h4 class="card-title">${book/title}</h4>
+                  <h4 class="card-title text-center">${book/title}</h4>
                   <section class="card-text">
                     <strong>Auteur</strong> : ${book/author}
                     <br />
@@ -122,41 +121,151 @@
       </div>
     </section>
 
-    <section id="noetique-section-videos" class="mt-4">
+    <section id="noetique-section-videos" tal:define="videos view/last_videos" class="mt-5">
       <div class="container">
         <h1 class="text-center">
           <tal:icon tal:replace="structure python:icons.tag('camera-video')" />
           Vous préférez en images
         </h1>
-        <article class="card">
-          <!--<iframe frameborder="0" allowfullscreen width="100%" tal:attributes="src string:https://www.youtube.com/embed/${video/video_id}"></iframe>-->
-        </article>
+        <div class="row">
+          <div class="col-12 col-lg-4" tal:repeat="item videos">
+            <article class="card h-100">
+              <iframe frameborder="0" allowfullscreen width="100%" tal:attributes="src string:https://www.youtube.com/embed/${item/video_id}"></iframe>
+              <div class="card-body">
+                <h4 class="card-title">${item/title}</h4>
+                <p class="card-text">
+                    ${item/description}
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
         <footer class="mt-3 h5 text-end">
           <a href="https://www.youtube.com/channel/UCplO3-iuNvhEinVj8Sxh6XA">Chaîne Youtube de Marc Halévy</a>
         </footer>
       </div>
     </section>
 
-    <section id="noetique-section-services" class="mt-4">
+    <section id="noetique-section-services" class="mt-5">
       <div class="container">
         <h1 class="text-center">
           <tal:icon tal:replace="structure python:icons.tag('info-circle')" />
           Puis-je vous aider ?
         </h1>
         <p class="text-center h3">Services aux dirigeants, experts et penseurs</p>
-        <!-- <div class="card-group">
-          <article class="card">
-Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur.
-          </article>
-          <article class="card">
-Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur.
-          </article>
-          <article class="card">
-Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur.
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <article class="card h-100 text-center">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Formations</h3>
+                <h4 class="card-subtitle">Conférences & Séminaires</h4>
+                <div class="h1 m-3">
+                  <tal:icon tal:replace="structure python:icons.tag('globe')" />
+                </div>
+                <p class="card-text">
+                    Le monde appartient à celles et ceux qui apprennent, en continu.
+                  <strong>Dirigeants, managers, consultants et experts</strong>, armez-vous de connaissances !
+                    En tête à tête, conférences d’initiation, ateliers collaboratifs, cycles méthodologiques, je suis à votre disposition.
+                </p>
+                <p class="card-text mt-auto">
+                  <button type="button" class="btn btn-secondary">
+                    <a href="${view/portal_path}/services/formations" class="card-link">En savoir +</a>
+                  </button>
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-lg-4">
+            <article class="card h-100 text-center">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Edition</h3>
+                <h4 class="card-subtitle">Essais & Romans</h4>
+                <div class="h1 m-3">
+                  <tal:icon tal:replace="structure python:icons.tag('book')" />
+                </div>
+                <p class="card-text">
+                    Parce qu'un <strong>livre est une trace</strong> éternelle, faites-nous écrire votre histoire, votre projet, votre combat, votre conviction.
+                    L'aventure sera mieux partagée dans un livre qu'en images ou dans un long discours.
+                    C'est la magie du Symbolon.
+                </p>
+                <p class="card-text  mt-auto">
+                  <button type="button" class="btn btn-secondary">
+                    <a href="${view/portal_path}/services/edition" class="card-link">En savoir +</a>
+                  </button>
+                </p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-lg-4">
+            <article class="card h-100 text-center">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Interventions</h3>
+                <h4 class="card-subtitle">Réseau d’experts</h4>
+                <div class="h1 m-3">
+                  <tal:icon tal:replace="structure python:icons.tag('people')" />
+                </div>
+                <p class="card-text">
+                    Et si mes paroles, mes textes, mes discours vous interpellent.
+                    Si vous souhaitez prolonger votre réflexion par un <strong>travail concret de transformation</strong> dans et pour votre organisation, parlons-en.
+                    Mon réseau proche viendra sur votre terrain.
+                </p>
+                <p class="card-text mt-auto">
+                  <button type="button" class="btn btn-secondary">
+                    <a href="${view/portal_path}/services/interventions" class="card-link">En savoir +</a>
+                  </button>
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>        <!-- End of services row -->
+      </div>      <!-- End of container -->
+    </section>
 
-          </article>
-        </div> -->
-        <article>TODO</article>
+    <section id="noetique-section-copyright" class="mt-5 py-3 bg-light">
+      <div class="container">
+        <p class="text-center px-3">
+            La pensée de Marc Halévy est faite pour circuler, mais tous les extraits de son travail doivent être cités comme suit :
+          <br />
+          <strong>©Marc Halévy (physicien, philosophie et prospectiviste) www.noetique.eu</strong>
+          <br />
+            Par ailleurs, l’envoi de votre travail serait apprécié.
+        </p>
+      </div>
+    </section>
+
+    <section id="noetique-section-contact" class="mt-5">
+      <div class="container">
+        <h1 class="text-center">
+          Contact
+        </h1>
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <section>
+              <strong>@Joindre l'équipe</strong> : +32 472 22 05 88
+            </section>
+            <section>
+              <strong>@Joindre Marc</strong> : marc AT noetique.eu
+            </section>
+          </div>
+          <div class="col-12 col-lg-4">
+            <section>
+              <tal:icon tal:replace="structure python:icons.tag('linkedin')" />
+              <a href="https://www.linkedin.com/in/marc-halevy-6a59191a7/">Marc Halévy</a>
+            </section>
+            <section>
+              <tal:icon tal:replace="structure python:icons.tag('linkedin')" />
+              <a href="https://www.linkedin.com/company/marangroup/">Maran Group</a>
+            </section>
+          </div>
+          <div class="col-12 col-lg-4">
+            <section>
+             ©Maran Group  srl, 3 rue Léon Save, 7000 Mons
+            </section>
+            <section>
+              Direction de communication <a href="http://www.guidaction.eu">www.guidaction.eu</a>
+            </section>
+          </div>
+        </div>
       </div>
     </section>
 

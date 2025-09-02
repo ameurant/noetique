@@ -127,7 +127,7 @@ class HomeView(BrowserView):
         return books
 
     @property
-    def last_video(self):
+    def last_videos(self):
         brains = api.content.find(
             portal_type="Link",
             path=self.portal_path + "/videos",
@@ -136,13 +136,13 @@ class HomeView(BrowserView):
             sort_order="reverse",
             sort_limit=3,
         )
-        if len(brains) < 1:
-            return None
-
-        link = brains[0].getObject()
-        video = {
-            "title": link.title,
-            "description": link.description,
-            "video_id": link.remoteUrl.split("?v=")[1] if "?v=" in link.remoteUrl else "",
-        }
-        return video
+        videos = []
+        for b in brains[:3]:
+            video = {
+                "title": b.Title,
+                "description": b.Description,
+                "video_id": b.getRemoteUrl.split("?v=")[1] if "?v=" in b.getRemoteUrl else "",
+            }
+            if video["video_id"]:
+                videos.append(video)
+        return videos
