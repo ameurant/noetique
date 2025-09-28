@@ -221,7 +221,7 @@
       </div>      <!-- End of container -->
     </section>
 
-    <section id="noetique-section-copyright" class="mt-5 py-3 bg-light">
+    <section id="noetique-section-copyright" class="mt-5 py-3" style="background-color: #dbdcdd;">
       <div class="container">
         <p class="text-center px-3">
             La pensée de Marc Halévy est faite pour circuler, mais tous les extraits de son travail doivent être cités comme suit :
@@ -235,7 +235,7 @@
 
     <section id="noetique-section-contact" class="mt-5">
       <div class="container">
-        <h1 class="text-center">
+        <h1 class="text-center d-none">
           Contact
         </h1>
         <div class="row">
