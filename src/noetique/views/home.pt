@@ -8,7 +8,7 @@
           <tal:icon tal:replace="structure python:icons.tag('pin')" />
           Epinglé
         </h1>
-        <article tal:define="news view/last_news" tal:repeat="item news" tal:attributes="class python:'border-top border-bottom' if repeat['item'].index == 0 else 'border-bottom'">
+        <article tal:define="news view/last_news" tal:repeat="item news" tal:attributes="class python:'border-top' if repeat['item'].index > 0 else ''">
           <a href="${item/url}">
             <section class="h6 pt-3 mb-0">
               Publié
@@ -27,7 +27,7 @@
           <tal:icon tal:replace="structure python:icons.tag('stopwatch')" />
           Rendez-vous publics
         </h1>
-        <article tal:repeat="event events" tal:attributes="class python:'border-top border-bottom' if repeat['event'].index == 0 else 'border-bottom'">
+        <article tal:repeat="event events" tal:attributes="class python:'border-top' if repeat['event'].index > 0 else ''">
           <a href="${event/url}">
             <section class="h5 pt-3 mb-0">
               Le <time datetime="${event/start}" class="pat-display-time" data-pat-display-time="output-format:Do MMMM YYYY;">${event/start}</time>
@@ -47,7 +47,7 @@
           <tal:icon tal:replace="structure python:icons.tag('vector-pen')" />
           Journal philosophique
         </h1>
-        <article tal:repeat="item thoughts" tal:attributes="class python:'border-top border-bottom' if repeat['item'].index == 0 else 'border-bottom'">
+        <article tal:repeat="item thoughts" tal:attributes="class python:'pb-3 border-top' if repeat['item'].index > 0 else 'pb-3'">
           <a href="${item/url}">
             <h5 class="pt-3 mb-0">
               ${item/title}
