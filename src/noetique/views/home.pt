@@ -45,7 +45,7 @@
       <div class="container">
         <h1 class="text-center">
           <tal:icon tal:replace="structure python:icons.tag('vector-pen')" />
-          Journal philosophique au quotidien
+          Journal philosophique
         </h1>
         <article tal:repeat="item thoughts" tal:attributes="class python:'border-top border-bottom' if repeat['item'].index == 0 else 'border-bottom'">
           <a href="${item/url}">
