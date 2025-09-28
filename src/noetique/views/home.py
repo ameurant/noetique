@@ -57,7 +57,7 @@ class HomeView(BrowserView):
     def last_thoughts(self):
         brains = api.content.find(
             portal_type="noetique.Post",
-            # path=self.portal_path + "/journal",
+            path=self.portal_path + "/quotidien",
             sort_on="effective",
             sort_order="reverse",
             sort_limit=3,
@@ -68,7 +68,7 @@ class HomeView(BrowserView):
             thought = {
                 "title": obj.title,
                 "effective": obj.effective.isoformat(),
-                "teaser": obj.text.output[:250],
+                "teaser": obj.description,
                 "url": obj.absolute_url() + "/view",
             }
             thoughts.append(thought)

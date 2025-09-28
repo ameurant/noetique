@@ -1,4 +1,5 @@
 import datetime
+import re
 
 from plone.dexterity.content import Item
 from plone.supermodel import model
@@ -24,8 +25,18 @@ class Post(Item):
     @property
     def title(self):
         computed_title = f"{self.effective.strftime('%A %d %B %Y')} à {self.effective.strftime('%HH%M')}"
-        return computed_title
+        return computed_title.capitalize()
 
     @title.setter
     def title(self, value):
+        pass
+
+    @property
+    def description(self):
+        beginning = self.text.output[300:]
+        clean_text = re.sub(r"<[^>]+>", "", beginning)
+        return clean_text[:250] + "..."
+
+    @description.setter
+    def description(self, value):
         pass
