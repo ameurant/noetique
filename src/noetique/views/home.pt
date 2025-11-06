@@ -68,7 +68,7 @@
       <div class="px-4">
         <h1 class="text-center">
           <tal:icon tal:replace="structure python:icons.tag('megaphone')" />
-          Billets
+          Articles
         </h1>
         <p class="text-center h3">Ce que j'ai à dire au monde sur le monde</p>
         <div class="row">
@@ -88,7 +88,7 @@
           </div>
         </div>
         <footer class="mt-3 h5 text-end">
-          <a href="${view/portal_url}/billets">Tous les billets</a>
+          <a href="${view/portal_url}/billets">Tous les articles</a>
         </footer>
       </div>
     </section>
