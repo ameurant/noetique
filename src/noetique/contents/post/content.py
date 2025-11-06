@@ -34,6 +34,8 @@ class Post(Item):
 
     @property
     def description(self):
+        if self.text is None:
+            return ""
         beginning = self.text.output[:300]
         clean_text = re.sub(r"<[^>]+>", "", beginning)
         return clean_text[:250] + "..."
