@@ -72,7 +72,7 @@
         </h1>
         <p class="text-center h3">Ce que j'ai à dire au monde sur le monde</p>
         <div class="row">
-          <div class="col-12 col-lg-4" tal:repeat="item articles">
+          <div class="col-12 col-lg-4 mb-2 mb-lg-0" tal:repeat="item articles">
             <article class="card h-100">
               <a href="${item/url}">
                 <div class="card-body">
@@ -100,7 +100,7 @@
           Mes derniers livres
         </h1>
         <div class="row">
-          <div class="col-12 col-md-6 col-lg-3" tal:repeat="book books">
+          <div class="col-12 col-md-6 col-lg-3 mb-2 mb-lg-0" tal:repeat="book books">
             <article class="card h-100">
               <a href="${book/url}">
                 <img class="card-img-top px-5 pt-5" tal:attributes="src string:${book/url}/@@images/cover/mini" />
@@ -157,7 +157,7 @@
         </h1>
         <p class="text-center h3">Services aux dirigeants, experts et penseurs</p>
         <div class="row">
-          <div class="col-12 col-lg-4">
+          <div class="col-12 col-lg-4 mb-2 mb-lg-0">
             <article class="card h-100 text-center">
               <div class="card-body d-flex flex-column">
                 <h3 class="card-title">Formations</h3>
@@ -178,7 +178,7 @@
               </div>
             </article>
           </div>
-          <div class="col-12 col-lg-4">
+          <div class="col-12 col-lg-4 mb-2 mb-lg-0">
             <article class="card h-100 text-center">
               <div class="card-body d-flex flex-column">
                 <h3 class="card-title">Edition</h3>

@@ -12,7 +12,7 @@
         </div>
       </section>
       <section id="noetique-section-contact" class="p-4" style="background-color: #dbdcdd;">
-          <div class="row align-items-center">
+          <div class="row align-items-center text-center text-lg-start">
            <div class="col-12 col-lg-3">
               <section>
               © Maran Group  SRL<br />
@@ -20,16 +20,19 @@
               </section>
             </div>
             <div class="col-12 col-lg-3">
-            <section>
+            <hr class="text-white d-lg-none" />
+            <section class="">
                 <a href="mailto:marc@noetique.eu" class="h4">@ Marc Halévy</a>
               </section>
             </div>
              <div class="col-12 col-lg-3">
+             <hr class="text-white d-lg-none" />
             <section>
                 <a href="https://www.linkedin.com/in/marc-halevy-6a59191a7/"  class="h4"><tal:icon tal:replace="structure python:icons.tag('linkedin')" /> Marc Halévy</a>
               </section>
             </div>
             <div class="col-12 col-lg-3">
+            <hr class="text-white d-lg-none" />
               <section>
                 <a href="http://www.guidaction.eu">Communication gérée par www.guidaction.eu</a>
               </section>
@@ -39,7 +42,7 @@
             </div>
         </div>
       </section>
-        <section class="text-center px-5 py-2">
+        <section class="text-center px-5 py-3">
             Site propulsé par <a href="https://plone.org">Plone</a> depuis 20 ans grâce à <a href="http://www.netvaast.be">Netvaast</a>
         </section>
     </div>
