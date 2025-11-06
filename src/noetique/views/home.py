@@ -5,6 +5,11 @@ from Products.Five import BrowserView
 
 class HomeView(BrowserView):
     @property
+    def portal_url(self):
+        portal = api.portal.get()
+        return portal.absolute_url()
+
+    @property
     def portal_path(self):
         portal = api.portal.get()
         return "/".join(portal.getPhysicalPath())

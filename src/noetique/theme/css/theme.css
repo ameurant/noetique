@@ -12936,6 +12936,10 @@ body.template-summary_view h2 + div, body.template-summary_view .h2 + div {
   display: none; /* Hide byline on Summary view */
 }
 
+body #portal-footer-wrapper {
+  display: none;
+}
+
 /* Header */
 #content-header {
   background: url("/++theme++noetique/images/header-background.png") no-repeat 75% 0px fixed;
@@ -12970,6 +12974,10 @@ body #noetique-quote {
 body.template-home_view #noetique-quote {
   color: #6b7777;
   display: block;
+}
+
+body.template-home_view #noetique-section-news {
+  background-color: #535b5d;
 }
 
 body.template-home_view #content .card a,

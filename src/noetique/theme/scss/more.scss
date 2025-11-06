@@ -17,6 +17,10 @@ body.portaltype-plone-site #portal-breadcrumbs .breadcrumb {
 body.template-summary_view h2 + div {
   display: none; /* Hide byline on Summary view */
 }
+body #portal-footer-wrapper {
+  display: none;
+}
+
 /* Header */
 
 #content-header {
@@ -51,6 +55,10 @@ body #noetique-quote {
 body.template-home_view #noetique-quote {
   color: $noetique-grey-medium;
   display: block;
+}
+
+body.template-home_view #noetique-section-news {
+  background-color: $noetique-grey-medium-dark;
 }
 
 body.template-home_view #content .card,
