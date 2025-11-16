@@ -10,5 +10,6 @@
         <element value="plone.richtext" />
         <element value="plone.shortname" />
         <element value="plone.tableofcontents" />
+        <element value="plone.categorization" />
     </property>
 </object>
