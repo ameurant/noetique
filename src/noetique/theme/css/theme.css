@@ -12928,16 +12928,22 @@ body.portaltype-plone-site #portal-breadcrumbs .breadcrumb {
   display: none; /* Hide breadcrumbs on the Plone site */
 }
 
-#section-byline {
-  display: none;
-}
-
 body.template-summary_view h2 + div, body.template-summary_view .h2 + div {
   display: none; /* Hide byline on Summary view */
 }
 
 body #portal-footer-wrapper {
   display: none;
+}
+
+/* Section byline */
+body #section-byline {
+  display: none;
+}
+
+body.section-billets #section-byline,
+body.section-articles #section-byline {
+  display: block;
 }
 
 /* Header */
@@ -12968,6 +12974,10 @@ body #portal-footer-wrapper {
 /* Marc quote */
 body #noetique-quote {
   display: none;
+}
+
+#search-results-number {
+  margin-left: 0.5rem;
 }
 
 /* Template home_view*/
