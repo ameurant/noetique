@@ -1,0 +1,4 @@
+<section id="section-byline" class="h5 fst-italic" tal:condition="python:context.portal_type in ['Document', 'File']">
+    Publié le
+    <time datetime="${context/effective}" class="pat-display-time" data-pat-display-time="output-format:Do MMMM YYYY">${context/effective}</time>
+</section>
