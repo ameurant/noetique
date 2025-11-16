@@ -7,6 +7,13 @@
       <bound-workflow workflow_id="simple_publication_workflow" />
     </default>
 
+    <type type_id="noetique.Post">
+      <bound-workflow workflow_id="one_state_workflow" />
+    </type>
+    <type type_id="noetique.Book">
+      <bound-workflow workflow_id="one_state_workflow" />
+    </type>
+
     <type type_id="File">
       <bound-workflow workflow_id="(Default)" />
     </type>
