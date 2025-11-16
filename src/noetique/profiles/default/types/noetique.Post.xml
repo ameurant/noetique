@@ -12,6 +12,7 @@
         <element value="plone.namefromtitle" />
         <element value="plone.locking" />
         <element value="plone.richtext" />
+        <element value="plone.categorization" />
     </property>
 
     <property name="global_allow">True</property>
