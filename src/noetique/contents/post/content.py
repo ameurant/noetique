@@ -1,6 +1,6 @@
 import datetime
-import re
 
+from plone import api
 from plone.dexterity.content import Item
 from plone.supermodel import model
 from zope import schema
@@ -36,9 +36,10 @@ class Post(Item):
     def description(self):
         if self.text is None:
             return ""
-        beginning = self.text.output[:300]
-        clean_text = re.sub(r"<[^>]+>", "", beginning)
-        return clean_text[:250] + "..."
+        beginning = self.text.output[:400]
+        transforms = api.portal.get_tool("portal_transforms")
+        text = transforms.convertTo("text/plain", beginning).getData()
+        return text[:300] + "..."
 
     @description.setter
     def description(self, value):
