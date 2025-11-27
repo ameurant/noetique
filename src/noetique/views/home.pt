@@ -30,8 +30,8 @@
         <article tal:repeat="event events" tal:attributes="class python:'border-top' if repeat['event'].index > 0 else ''">
           <a href="${event/url}">
             <section class="h5 pt-3 mb-0">
-              Le <time datetime="${event/start}" class="pat-display-time" data-pat-display-time="output-format:Do MMMM YYYY;">${event/start}</time>
-              à
+              <time datetime="${event/start}" class="pat-display-time" data-pat-display-time="output-format:Do MMMM YYYY;">${event/start}</time>
+              -
               <span>${event/location}</span>
             </section>
             <h3 class="mt-0">${event/title}</h3>
