@@ -37,5 +37,6 @@
 
   <include package=".contents" />
   <include package=".views" />
+  <include package=".forms" />
 
 </configure>
