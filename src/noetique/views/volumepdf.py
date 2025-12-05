@@ -52,8 +52,10 @@ class VolumePdfView(BrowserView):
                     for attr in ["style", "lang"]:
                         if tag.has_attr(attr):
                             del tag[attr]
-                    if tag.has_attr("class") and any(c.startswith("Mso") for c in tag.get("class", [])):
-                        del tag["class"]
+                    if tag.has_attr("class") and "MsoNormal" in tag.get("class", []):
+                        tag["class"] = [c for c in tag["class"] if c != "MsoNormal"]
+                        if not tag["class"]:
+                            del tag["class"]
                 # Supprimer les span sans attribut class (en gardant leur contenu)
                 for span in soup.find_all("span"):
                     if not span.get("class"):
