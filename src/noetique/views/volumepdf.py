@@ -13,8 +13,8 @@ class VolumePdfView(BrowserView):
     def __call__(self):
         if not self.request.get("begin") or not self.request.get("end"):
             raise ValueError("begin et end sont requis")
-        begin = datetime.strptime(self.request["begin"], "%Y-%m-%d").date()
-        end = datetime.strptime(self.request["end"], "%Y-%m-%d").date()
+        begin = datetime.strptime(self.request["begin"], "%Y-%m-%d")
+        end = datetime.strptime(self.request["end"], "%Y-%m-%d").replace(hour=23, minute=59, second=59)
         brains = api.content.find(
             portal_type="noetique.Post",
             sort_on="effective",
