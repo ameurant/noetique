@@ -1,6 +1,6 @@
 import datetime
 
-from plone import api
+from bs4 import BeautifulSoup
 from plone.dexterity.content import Item
 from plone.supermodel import model
 from zope import schema
@@ -36,10 +36,9 @@ class Post(Item):
     def description(self):
         if self.text is None:
             return ""
-        beginning = self.text.output[:400]
-        transforms = api.portal.get_tool("portal_transforms")
-        text = transforms.convertTo("text/plain", beginning).getData()
-        return text[:300] + "..."
+        soup = BeautifulSoup(self.text.output, "html.parser")
+        text = soup.get_text(separator=" ", strip=True)
+        return text[:300] + "..." if len(text) > 300 else text
 
     @description.setter
     def description(self, value):
