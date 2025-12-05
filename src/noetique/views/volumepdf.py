@@ -23,7 +23,7 @@ class VolumePdfView(BrowserView):
         )
         styles = """
           <style>
-            body { font-size: 14pt;}
+            body { font-size: 13pt;}
             .text-center { text-align: center; }
           </style>
         """
