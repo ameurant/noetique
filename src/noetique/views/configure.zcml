@@ -25,6 +25,14 @@
       />
 
   <browser:page
+      name="volume-pdf"
+      for="*"
+      class=".volumepdf.VolumePdfView"
+      permission="zope2.View"
+      layer="..interfaces.ILayerSpecific"
+      />
+
+  <browser:page
       name="books_view"
       for="plone.app.contenttypes.behaviors.collection.ISyndicatableCollection"
       class="plone.app.contenttypes.browser.collection.CollectionView"
